@@ -2,21 +2,21 @@ console.clear();
 
 const selectButton = document.querySelector(".dropdown-menu");
 
-let url = "https://rickandmortyapi.com/api/character/";
-
-if (selectButton.value === "alive") {
-  url = `https://rickandmortyapi.com/api/character?status=alive`;
-}
-if (selectButton.value === "dead") {
-  url = "https://rickandmortyapi.com/api/character?status=dead";
-}
-if (selectButton.value === "unknown") {
-  url = "https://rickandmortyapi.com/api/character?status=unknown";
-}
-
 const loadButton = document.querySelector(".button");
 
 loadButton.addEventListener("click", () => {
+  let url = "https://rickandmortyapi.com/api/character/";
+
+  if (selectButton.value === "alive") {
+    url = `https://rickandmortyapi.com/api/character?status=alive`;
+  }
+  if (selectButton.value === "dead") {
+    url = "https://rickandmortyapi.com/api/character?status=dead";
+  }
+  if (selectButton.value === "unknown") {
+    url = "https://rickandmortyapi.com/api/character?status=unknown";
+  }
+
   fetch(url)
     .then((response) => {
       if (response.ok) {
@@ -28,9 +28,10 @@ loadButton.addEventListener("click", () => {
 
     .then((data) => {
       console.log(data.results);
+      const main = document.querySelector("main");
+      main.textContent = "";
 
       data.results.forEach((card) => {
-        const main = document.querySelector("main");
         const section = document.createElement("section");
         section.classList.add("content");
         const textFrame = document.createElement("div");
@@ -64,11 +65,6 @@ loadButton.addEventListener("click", () => {
         textFrame.append(name);
         textFrame.append(status);
         textFrame.append(location);
-
-        loadButton.addEventListener("click", () => {
-          const removeCards = document.querySelector("section");
-          removeCards.forEach((card) => card.remove());
-        });
       });
     })
     .catch((error) => {
