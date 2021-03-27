@@ -17,7 +17,7 @@ body {
   display: grid;
   min-width: 320px;
   max-width: 100vh;
-  grid-template-rows: 90px 487px 90px;
+  grid-template-rows: 60px 547px 60px;
   margin: 0 auto;
 }
 
@@ -25,7 +25,7 @@ body {
   grid-row: 1/2;
   display: flex;
   justify-content: space-around;
-  background-color: #fff;
+  background-color: purple;
 }
 
 .main-grid {
@@ -35,21 +35,26 @@ body {
   overflow-y: scroll;
   background-color: #292929;
   color: #fff;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer-grid {
-  background-color: #fff;
+  background-color: purple;
+  color: chartreuse;
   grid-row: 3/4;
   margin: 0px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
-.footer-grid h2 {
+.footer-grid p {
   font-weight: 200;
   font-size: 16px;
-  margin-top: 35px;
+  margin-top: -10px;
+  color: chartreuse;
 }
 
 /* BUTTONS */
@@ -59,15 +64,18 @@ body {
   flex-direction: row;
   justify-content: space-around;
   width: 90%;
-  margin-top: 20px;
+  margin-top: 5px;
+  background-color: purple;
 }
 
 .dropdown-menu {
-  border: 1px solid #000;
   height: 20px;
   width: 100px;
   margin-right: 20px;
   margin-top: 15px;
+  color: purple;
+  background-color: chartreuse;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .logo {
@@ -77,6 +85,8 @@ body {
   height: 20px;
   margin-top: 15px;
   border: 1px solid #fff;
+  background-color: chartreuse;
+  border-radius: 5px 5px 5px 5px;
 }
 
 /* CARD SECTION */
@@ -84,10 +94,9 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
-  background-color: #3d3d3d;
-  border-radius: 25px 25px 25px 25px;
-  width: 100%;
+  border-radius: 5px 5px 5px 5px;
+  width: 45%;
+  margin: 1%;
   display: flex;
   flex-direction: column;
 }
@@ -95,29 +104,49 @@ body {
 .text-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.headline {
+.text-container-alive {
+  background-color: green;
+}
+
+.text-container-dead {
+  background-color: #f00;
+}
+
+.text-container-unknown {
+  background-color: blue;
+}
+
+.headline-text {
   margin: 15px;
-  font-size: 20px;
+  font-size: 16px;
+  color: #ccc;
+  text-align: center;
 }
 
 .headline:hover {
   color: #ffaa33;
 }
 
-.status {
+.status-text {
   font-weight: 100;
   font-size: 12px;
   margin: 0;
+  color: #ccc;
+  text-align: center;
 }
 
-.location {
+.location-text {
   font-weight: 100;
-  font-size: 13px;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px;
+  color: #ffaf03;
 }
 
 .photo {
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
