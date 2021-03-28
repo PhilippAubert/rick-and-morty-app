@@ -4,6 +4,8 @@ const selectButton = document.querySelector(".dropdown-menu");
 
 const loadButton = document.querySelector(".button");
 
+const filterInput = document.querySelector(".input");
+
 loadButton.addEventListener("click", () => {
   let url = "https://rickandmortyapi.com/api/character/";
 
@@ -15,6 +17,9 @@ loadButton.addEventListener("click", () => {
   }
   if (selectButton.value === "unknown") {
     url = "https://rickandmortyapi.com/api/character?status=unknown";
+  }
+  if (filterInput.value) {
+    url = `https://rickandmortyapi.com/api/character?name=${filterInput.value}&status=${selectButton.value}`;
   }
 
   fetch(url)
