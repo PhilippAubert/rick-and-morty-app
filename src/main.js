@@ -22,7 +22,7 @@ loadButton.addEventListener("click", () => {
       if (response.ok) {
         return response.json();
       } else {
-        throw Error("ERROR!");
+        throw Error("ERRRRRRROR!");
       }
     })
 
